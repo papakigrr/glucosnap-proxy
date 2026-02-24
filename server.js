@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 // ── CORS: επιτρέπουμε μόνο το GitHub Pages domain σου
 // Άλλαξε το παρακάτω URL με το δικό σου GitHub Pages URL
 const ALLOWED_ORIGINS = [
-  'https://YOUR_USERNAME.github.io',   // <-- άλλαξε αυτό
+  'https://papakigrr.github.io',   // <-- άλλαξε αυτό
   'http://localhost:8080',              // για local testing
   'http://127.0.0.1:8080',
 ];
