@@ -28,7 +28,7 @@ app.all('/proxy/*', async (req, res) => {
   const headers = {
     'Content-Type': 'application/json',
     'product':      'llu.android',
-    'version':      '4.9.0',
+    'version':      '4.16.0',
     'Application':  'llu.android',
   };
   if (req.headers['authorization']) headers['Authorization'] = req.headers['authorization'];
