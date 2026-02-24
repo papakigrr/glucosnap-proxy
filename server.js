@@ -19,7 +19,7 @@ app.use(cors({
   },
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'product', 'version',
-                   'Application', 'patientid', 'account-id'],
+                 'Application', 'patientid', 'account-id', 'x-libre-region'],
 }));
 
 app.use(express.json({ limit: '1mb' }));
