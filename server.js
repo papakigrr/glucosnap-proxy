@@ -4,7 +4,6 @@ const fetch   = require('node-fetch');
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
-// Επιτρέπουμε CORS από παντού
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin',  '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -16,14 +15,12 @@ app.use((req, res, next) => {
 
 app.use(express.json({ limit: '1mb' }));
 
-// Health check
 app.get('/', (req, res) => {
   res.json({ status: 'ok', service: 'GlucoSnap LibreView Proxy', version: '1.1.0' });
 });
 
-// Proxy: /proxy/* → api-XX.libreview.io/*
 app.all('/proxy/*', async (req, res) => {
-  const region  = req.headers['x-libre-region'] || 'eu2';
+  const region  = req.headers['x-libre-region'] || 'eu';
   const baseUrl = region ? `https://api-${region}.libreview.io` : 'https://api.libreview.io';
   const path    = req.path.replace(/^\/proxy/, '');
   const url     = baseUrl + path;
