@@ -1,4 +1,4 @@
-const express = require('express');
+eq.headers['account-id'])    headers['accounconst express = require('express');
 const fetch   = require('node-fetch');
 
 const app  = express();
@@ -34,6 +34,9 @@ app.all('/proxy/*', async (req, res) => {
   if (req.headers['authorization']) headers['Authorization'] = req.headers['authorization'];
   if (req.headers['patientid'])     headers['patientid']     = req.headers['patientid'];
   if (req.headers['account-id'])    headers['account-id']    = req.headers['account-id'];
+  
+  // Forward x-libre-region για debugging
+  console.log('Headers received:', JSON.stringify(req.headers));
 
   try {
     const options = { method: req.method, headers };
